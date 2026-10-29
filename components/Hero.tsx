@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Play, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import {
+  ArrowRight,
+  Play,
+  ChevronLeft,
+  ChevronRight,
+  CheckCircle2,
+} from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -101,7 +107,7 @@ export default function Hero() {
             custom={0}
             variants={fadeUp}
           >
-            <span className="eyebrow">Premium Digital Studio</span>
+            <span className="eyebrow">Premium Digital Marketing </span>
           </motion.div>
 
           <motion.h1
@@ -153,35 +159,21 @@ export default function Hero() {
             animate="visible"
             custom={4}
             variants={fadeUp}
-            className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-body text-sm"
+            className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-body text-sm"
           >
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-2">
-                {[
-                  "https://i.pravatar.cc/80?img=12",
-                  "https://i.pravatar.cc/80?img=32",
-                  "https://i.pravatar.cc/80?img=47",
-                ].map((src) => (
-                  <Image
-                    key={src}
-                    src={src}
-                    alt="Client avatar"
-                    width={36}
-                    height={36}
-                    className="w-9 h-9 rounded-full border-2 border-background object-cover"
-                  />
-                ))}
-              </div>
-              <span className="font-medium">Trusted by 200+ teams</span>
-            </div>
-            <div className="h-6 w-px bg-white/20 hidden sm:block" />
             <div className="flex items-center gap-2">
-              <div className="flex text-primary">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
-              </div>
-              <span className="font-medium">4.9 / 5 rating</span>
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span className="font-medium">Founder-led team</span>
+            </div>
+            <div className="h-4 w-px bg-white/20 hidden sm:block" />
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span className="font-medium">Design, development & marketing</span>
+            </div>
+            <div className="h-4 w-px bg-white/20 hidden sm:block" />
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span className="font-medium">Direct collaboration</span>
             </div>
           </motion.div>
         </div>

@@ -6,26 +6,28 @@ import {
   Menu,
   X,
   Headphones,
+  Mail,
   Facebook,
-  Twitter,
   Instagram,
   Linkedin,
 } from "lucide-react";
+import Logo from "@/components/Logo";
+import { CONTACT, SOCIAL_LINKS, type SocialKey } from "@/lib/site";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Team", href: "#team" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
 
-const SOCIALS = [
-  { icon: Facebook, label: "Facebook", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-];
+const SOCIAL_ICONS: Record<SocialKey, typeof Facebook> = {
+  facebook: Facebook,
+  linkedin: Linkedin,
+  instagram: Instagram,
+};
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -59,19 +61,14 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 h-20 flex items-center justify-between gap-6">
-        {/* Logo — red dot + name */}
+        {/* Logo */}
         <a
           href="#home"
           onClick={closeMobile}
-          className="flex items-center gap-2.5 group shrink-0"
-          aria-label="NovaCraft home"
+          className="group shrink-0 transition-transform hover:scale-[1.03]"
+          aria-label="MM Digital Marketing home"
         >
-          <span className="relative w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-glow group-hover:scale-105 transition-transform">
-            <span className="font-display font-bold text-lg text-white">N</span>
-          </span>
-          <span className="font-display font-bold text-xl tracking-tight text-white hidden sm:inline">
-            Nova<span className="text-primary">Craft</span>
-          </span>
+          <Logo />
         </a>
 
         {/* Desktop nav */}
@@ -93,13 +90,15 @@ export default function Navbar() {
         <div className="flex items-center gap-3 md:gap-4">
           {/* Social icons (desktop) */}
           <div className="hidden xl:flex items-center gap-3 pr-4 border-r border-white/15">
-            {SOCIALS.map((s) => {
-              const Icon = s.icon;
+            {SOCIAL_LINKS.map((s) => {
+              const Icon = SOCIAL_ICONS[s.key];
               return (
                 <a
-                  key={s.label}
+                  key={s.key}
                   href={s.href}
-                  aria-label={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${s.label} (opens in a new tab)`}
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   <Icon className="w-4 h-4" />
@@ -110,7 +109,7 @@ export default function Navbar() {
 
           {/* Phone */}
           <a
-            href="tel:+14155550142"
+            href={CONTACT.phoneHref}
             className="hidden md:flex items-center gap-2.5 text-white"
           >
             <span className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
@@ -120,7 +119,9 @@ export default function Navbar() {
               <span className="text-[10px] uppercase tracking-widest text-secondary">
                 Call us
               </span>
-              <span className="text-sm font-semibold">+1 (415) 555-0142</span>
+              <span className="text-sm font-semibold">
+                {CONTACT.phoneDisplay}
+              </span>
             </span>
           </a>
 
@@ -175,7 +176,7 @@ export default function Navbar() {
               ))}
               <li className="px-5 pt-3 pb-4 space-y-3">
                 <a
-                  href="tel:+14155550142"
+                  href={CONTACT.phoneHref}
                   className="flex items-center gap-3 text-white"
                 >
                   <span className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
@@ -185,9 +186,44 @@ export default function Navbar() {
                     <p className="text-[10px] uppercase tracking-widest text-secondary">
                       Call us
                     </p>
-                    <p className="text-sm font-semibold">+1 (415) 555-0142</p>
+                    <p className="text-sm font-semibold">
+                      {CONTACT.phoneDisplay}
+                    </p>
                   </div>
                 </a>
+                <a
+                  href={CONTACT.emailHref}
+                  className="flex items-center gap-3 text-white break-all"
+                >
+                  <span className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 text-primary" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-[10px] uppercase tracking-widest text-secondary">
+                      Email us
+                    </p>
+                    <p className="text-sm font-semibold break-all">
+                      {CONTACT.email}
+                    </p>
+                  </div>
+                </a>
+                <div className="flex items-center gap-2 pt-1">
+                  {SOCIAL_LINKS.map((social) => {
+                    const Icon = SOCIAL_ICONS[social.key];
+                    return (
+                      <a
+                        key={social.key}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${social.label} (opens in a new tab)`}
+                        className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-secondary hover:text-white hover:bg-white/10 transition-colors"
+                      >
+                        <Icon className="w-4 h-4" />
+                      </a>
+                    );
+                  })}
+                </div>
                 <a
                   href="#contact"
                   onClick={closeMobile}

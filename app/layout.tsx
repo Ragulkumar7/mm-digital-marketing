@@ -27,41 +27,43 @@ const dmMono = DM_Mono({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const siteDescription =
+  "MM Digital Marketing is a founder-led digital studio building thoughtful websites, branding, SEO, and marketing with a small, hands-on team.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://novacraft.example.com"),
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: {
-    default: "NovaCraft — Modern Digital Design & Development Studio",
-    template: "%s | NovaCraft",
+    default: "MM Digital Marketing — Digital Design, Development & Marketing",
+    template: "%s | MM Digital Marketing",
   },
-  description:
-    "NovaCraft is a premium digital design agency crafting stunning websites, branding, and digital products for ambitious startups and global brands.",
+  description: siteDescription,
   keywords: [
     "design agency",
     "web development",
     "UI UX design",
     "branding",
     "digital marketing",
-    "startup design",
-    "SaaS landing page",
-    "NovaCraft",
+    "SEO",
+    "social media management",
+    "MM Digital Marketing",
   ],
-  authors: [{ name: "NovaCraft Agency" }],
-  creator: "NovaCraft Agency",
+  authors: [{ name: "MM Digital Marketing" }],
+  creator: "MM Digital Marketing",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://novacraft.example.com",
-    siteName: "NovaCraft",
-    title: "NovaCraft — Modern Digital Design & Development Studio",
+    ...(siteUrl ? { url: siteUrl } : {}),
+    siteName: "MM Digital Marketing",
+    title: "MM Digital Marketing — Digital Design, Development & Marketing",
     description:
-      "Premium digital design agency crafting stunning websites, branding, and digital products.",
+      "A founder-led digital studio building websites, branding, SEO, and marketing with a hands-on team.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NovaCraft",
+    title: "MM Digital Marketing",
     description:
-      "Premium digital design agency crafting stunning websites, branding, and digital products.",
-    creator: "@novacraft",
+      "A founder-led digital studio building websites, branding, SEO, and marketing with a hands-on team.",
   },
   robots: {
     index: true,

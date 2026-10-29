@@ -1,34 +1,26 @@
 "use client";
 
-import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
-import { Quote, Star } from "lucide-react";
+import { Compass, Handshake, MessagesSquare } from "lucide-react";
 
-type Testimonial = {
-  name: string;
-  role: string;
-  image: string;
-  text: string;
-};
-
-const TESTIMONIALS: Testimonial[] = [
+const PRINCIPLES = [
   {
-    name: "Amelia Carter",
-    role: "Founder, Lumora Studio",
-    image: "https://i.pravatar.cc/200?img=47",
-    text: "NovaCraft completely transformed our brand. From the first call to launch day, the team was thoughtful, fast, and obsessed with quality. Our conversions doubled within a month.",
+    icon: Handshake,
+    title: "Direct collaboration",
+    description:
+      "You work with the people doing the work. No layers of account management and no hand-offs that lose the details.",
   },
   {
-    name: "Daniel Reyes",
-    role: "CEO, Northwind Labs",
-    image: "https://i.pravatar.cc/200?img=12",
-    text: "Working with NovaCraft felt like having an in-house design team. They get product, they get business, and they ship beautiful, polished work — every single time.",
+    icon: MessagesSquare,
+    title: "Clear communication",
+    description:
+      "Expect straightforward updates, honest timelines, and a shared understanding of what success looks like at every stage.",
   },
   {
-    name: "Sofia Nakamura",
-    role: "Head of Marketing, Pixelplane",
-    image: "https://i.pravatar.cc/200?img=32",
-    text: "The level of craft is unreal. Animations, motion, micro-interactions — it all feels premium. Customers tell us our website is the reason they trusted us.",
+    icon: Compass,
+    title: "Long-term thinking",
+    description:
+      "We build for where your brand is going, not just for launch day — with foundations that are easy to maintain and grow.",
   },
 ];
 
@@ -59,14 +51,16 @@ export default function Testimonials() {
         >
           <span className="pill">
             <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            Loved by teams worldwide
+            How we partner
           </span>
           <h2 className="mt-4 font-display font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white">
-            What Our <span className="text-gradient">Clients Say</span>
+            Building Stronger{" "}
+            <span className="text-gradient">Brands Together</span>
           </h2>
-          <p className="mt-4 text-secondary text-base md:text-lg">
-            Don&apos;t just take our word for it — here&apos;s what founders
-            and product leaders say about working with us.
+          <p className="mt-4 text-secondary text-base md:text-lg leading-relaxed">
+            Good work comes from a good working relationship. We keep projects
+            collaborative, communication direct, and decisions grounded in your
+            goals — from the first conversation to launch and beyond.
           </p>
         </motion.div>
 
@@ -75,47 +69,43 @@ export default function Testimonials() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="mt-14 grid md:grid-cols-3 gap-6"
         >
-          {TESTIMONIALS.map((t) => (
-            <motion.article
-              key={t.name}
-              variants={itemVariants}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.3 }}
-              className="relative glass-card gradient-border p-7 md:p-8 flex flex-col"
-            >
-              <Quote
-                className="absolute top-6 right-6 w-8 h-8 text-primary/30"
-                aria-hidden
-              />
-
-              <div className="flex items-center gap-1 text-yellow-400">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
-              </div>
-
-              <p className="mt-5 text-secondary text-base leading-relaxed">
-                &ldquo;{t.text}&rdquo;
-              </p>
-
-              <div className="mt-7 pt-6 border-t border-white/10 flex items-center gap-4">
-                <Image
-                  src={t.image}
-                  alt={`${t.name} profile`}
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 rounded-full object-cover border border-white/15"
-                />
-                <div>
-                  <p className="font-medium text-white">{t.name}</p>
-                  <p className="text-xs text-secondary">{t.role}</p>
+          {PRINCIPLES.map((principle) => {
+            const Icon = principle.icon;
+            return (
+              <motion.article
+                key={principle.title}
+                variants={itemVariants}
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.3 }}
+                className="relative glass-card gradient-border p-7 md:p-8 flex flex-col"
+              >
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary">
+                  <Icon className="w-5 h-5" />
                 </div>
-              </div>
-            </motion.article>
-          ))}
+
+                <h3 className="mt-5 font-display font-semibold text-xl text-white">
+                  {principle.title}
+                </h3>
+                <p className="mt-3 text-secondary text-base leading-relaxed">
+                  {principle.description}
+                </p>
+              </motion.article>
+            );
+          })}
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mt-10 text-center text-sm text-secondary"
+        >
+          Want to talk through your project first? We&apos;re happy to
+          have a straightforward conversation about fit, scope, and next steps.
+        </motion.p>
       </div>
     </section>
   );

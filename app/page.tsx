@@ -4,6 +4,7 @@ import StatsStrip from "@/components/StatsStrip";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import About from "@/components/About";
+import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import CtaBanner from "@/components/CtaBanner";
 import Contact from "@/components/Contact";
@@ -19,6 +20,7 @@ export default function HomePage() {
         <Services />
         <Portfolio />
         <About />
+        <Team />
         <Testimonials />
         <CtaBanner />
         <Contact />

@@ -1,13 +1,15 @@
 "use client";
 
 import {
-  Sparkles,
-  Twitter,
   Linkedin,
   Facebook,
   Instagram,
   ArrowUp,
+  Mail,
+  Phone,
 } from "lucide-react";
+import Logo from "@/components/Logo";
+import { CONTACT, SOCIAL_LINKS, type SocialKey } from "@/lib/site";
 
 const FOOTER_LINKS: { title: string; links: { label: string; href: string }[] }[] =
   [
@@ -15,6 +17,7 @@ const FOOTER_LINKS: { title: string; links: { label: string; href: string }[] }[
       title: "Company",
       links: [
         { label: "About", href: "#about" },
+        { label: "Team", href: "#team" },
         { label: "Services", href: "#services" },
         { label: "Portfolio", href: "#portfolio" },
         { label: "Contact", href: "#contact" },
@@ -40,12 +43,11 @@ const FOOTER_LINKS: { title: string; links: { label: string; href: string }[] }[
     },
   ];
 
-const SOCIALS = [
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Facebook, label: "Facebook", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-];
+const SOCIAL_ICONS: Record<SocialKey, typeof Facebook> = {
+  facebook: Facebook,
+  linkedin: Linkedin,
+  instagram: Instagram,
+};
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -63,31 +65,49 @@ export default function Footer() {
             <div className="lg:col-span-5">
               <a
                 href="#home"
-                className="inline-flex items-center gap-2"
-                aria-label="NovaCraft Agency"
+                className="inline-flex items-center"
+                aria-label="MM Digital Marketing"
               >
-                <span className="w-9 h-9 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow">
-                  <Sparkles className="w-5 h-5 text-white" strokeWidth={2.4} />
-                </span>
-                <span className="font-display font-bold text-xl tracking-tight text-white">
-                  Nova<span className="text-gradient">Craft</span>
-                </span>
+                <Logo />
               </a>
 
               <p className="mt-5 text-secondary text-sm leading-relaxed max-w-md">
-                A premium digital design studio helping ambitious brands launch
-                stunning websites, products, and identities that win hearts and
-                customers.
+                A digital studio helping ambitious brands launch thoughtful
+                websites, products, and identities — led by a small team that
+                values craft, clarity, and communication.
               </p>
 
+              <ul className="mt-6 space-y-3 text-sm">
+                <li>
+                  <a
+                    href={CONTACT.phoneHref}
+                    className="inline-flex items-center gap-2.5 text-secondary hover:text-white transition-colors"
+                  >
+                    <Phone className="w-4 h-4 text-primary" aria-hidden />
+                    {CONTACT.phoneDisplay}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={CONTACT.emailHref}
+                    className="inline-flex items-center gap-2.5 text-secondary hover:text-white transition-colors break-all"
+                  >
+                    <Mail className="w-4 h-4 shrink-0 text-primary" aria-hidden />
+                    {CONTACT.email}
+                  </a>
+                </li>
+              </ul>
+
               <div className="mt-6 flex items-center gap-2">
-                {SOCIALS.map((social) => {
-                  const Icon = social.icon;
+                {SOCIAL_LINKS.map((social) => {
+                  const Icon = SOCIAL_ICONS[social.key];
                   return (
                     <a
-                      key={social.label}
+                      key={social.key}
                       href={social.href}
-                      aria-label={social.label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${social.label} (opens in a new tab)`}
                       className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-secondary hover:text-white hover:bg-white/10 hover:border-white/20 transition-colors"
                     >
                       <Icon className="w-4 h-4" />
@@ -122,7 +142,7 @@ export default function Footer() {
 
           <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-secondary text-center sm:text-left">
-              © {year} NovaCraft Agency. All rights reserved.
+              © {year} MM Digital Marketing. All rights reserved.
             </p>
 
             <div className="flex items-center gap-4 text-sm text-secondary">

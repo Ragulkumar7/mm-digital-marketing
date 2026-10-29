@@ -46,7 +46,7 @@ const PROJECTS: Project[] = [
     image:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=80",
     description:
-      "Editorial portfolio for an award-winning photographer. Full-bleed imagery, custom typography, and cursor-driven hover states. Built lightweight with Astro to keep Lighthouse scores at 100 across the board.",
+      "Editorial portfolio for a professional photographer. Full-bleed imagery, custom typography, and cursor-driven hover states. Built lightweight with Astro to keep the experience fast across devices.",
     tags: ["Astro", "Editorial", "Branding"],
   },
   {

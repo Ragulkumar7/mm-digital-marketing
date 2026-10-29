@@ -22,7 +22,7 @@ export default function CtaBanner() {
             </h2>
             <p className="mt-4 text-secondary leading-relaxed">
               Have a project in mind? Send us a message and we&apos;ll get back
-              to you within 24 hours.
+              to you as soon as possible.
             </p>
           </div>
           <a
