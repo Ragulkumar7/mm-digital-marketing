@@ -167,7 +167,7 @@ export default function Team() {
           </span>
           <h2 className="mt-4 font-display font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white">
             The People Behind{" "}
-            <span className="text-gradient">MM Digital Marketing</span>
+            <span className="text-gradient">MM Brandvista</span>
           </h2>
           <div className="section-title-line mx-auto" />
           <p className="mt-4 text-secondary text-base md:text-lg leading-relaxed">

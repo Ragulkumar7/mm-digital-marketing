@@ -58,7 +58,7 @@ export default function About() {
         >
           <span className="pill">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            About MM Digital Marketing
+            About MM Brandvista
           </span>
           <h2 className="mt-4 font-display font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight text-white">
             Why <span className="text-gradient">Choose Us?</span>
@@ -133,7 +133,7 @@ export default function About() {
                     Founder-led. Specialist-driven.
                   </p>
                   <p className="mt-2 text-sm text-secondary leading-relaxed">
-                    MM Digital Marketing is led by founder Praveen Kumar A and
+                    MM Brandvista is led by founder Praveen Kumar A and
                     supported by a compact team of developers, marketers, and
                     creatives. You work directly with the people doing the work.
                   </p>
@@ -193,7 +193,7 @@ export default function About() {
               </div>
               <a
                 href="#team"
-                aria-label="Meet the MM Digital Marketing team"
+                aria-label="Meet the MM Brandvista team"
                 className="shrink-0 w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-colors"
               >
                 <ArrowRight className="w-4 h-4" />

@@ -70,7 +70,7 @@ export default function Footer() {
               <a
                 href="#home"
                 className="inline-flex items-center"
-                aria-label="MM Digital Marketing"
+                aria-label="MM Brandvista"
               >
                 <Logo />
               </a>
@@ -146,7 +146,7 @@ export default function Footer() {
 
           <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-secondary text-center sm:text-left">
-              © {year} MM Digital Marketing. All rights reserved.
+              © {year} MM Brandvista. All rights reserved.
             </p>
 
             <div className="flex items-center gap-4 text-sm text-secondary">

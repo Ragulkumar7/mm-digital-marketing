@@ -9,7 +9,7 @@ export default function Logo({ className = "" }: LogoProps) {
     <span className={`inline-flex items-center ${className}`.trim()}>
       <Image
         src="/images/mm-digital-marketing-logo.jpeg"
-        alt="MM Digital Marketing"
+        alt="MM Brandvista"
         width={512}
         height={512}
         priority

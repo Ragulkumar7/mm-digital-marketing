@@ -1,4 +1,4 @@
-# MM Digital Marketing — Website
+# MM Brandvista — Website
 
 > A modern, responsive digital agency website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
@@ -160,9 +160,9 @@ key, or any other private credential in this project.
    enquiries: `mmdigitalmarketing786@gmail.com`. Complete Google's consent flow.
 3. Create an email template and use these settings:
    - **To Email:** `mmdigitalmarketing786@gmail.com`
-   - **From Name:** `MM Digital Marketing`
+   - **From Name:** `MM Brandvista`
    - **Reply To:** `{{email}}`
-   - **Subject:** `MM Digital Marketing enquiry: {{subject}}`
+   - **Subject:** `MM Brandvista enquiry: {{subject}}`
    - **Body:** include `{{name}}`, `{{email}}`, `{{phone}}`, `{{subject}}`,
      and `{{message}}`.
 4. Copy the **Service ID**, **Template ID**, and **Public Key** from the EmailJS
@@ -216,7 +216,7 @@ tags use the real production domain.
 
 | Decision | Rationale |
 |---|---|
-| **MM Digital Marketing brand** | The supplied logo image is used in the navbar and footer |
+| **MM Brandvista brand** | The supplied logo image is used in the navbar and footer |
 | **Dark editorial theme** | Near-black surfaces with a red accent, generous spacing, and glass cards |
 | **Syne + DM Sans** | Geometric display headings with a clean neutral body face |
 | **Soft surface cards** | White cards with subtle shadows instead of dark glassmorphism |

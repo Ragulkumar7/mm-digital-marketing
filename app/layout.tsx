@@ -29,14 +29,14 @@ const dmMono = DM_Mono({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const siteDescription =
-  "MM Digital Marketing is a founder-led digital marketing agency offering content creation, social media management, graphic design, video production, Meta Ads, Google Ads, website development, SaaS solutions, and AI business solutions with a small, hands-on team.";
+  "MM Brandvista is a founder-led digital marketing agency offering content creation, social media management, graphic design, video production, Meta Ads, Google Ads, website development, SaaS solutions, and AI business solutions with a small, hands-on team.";
 
 export const metadata: Metadata = {
   ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: {
     default:
-      "MM Digital Marketing — Digital Marketing Services & Creative Studio",
-    template: "%s | MM Digital Marketing",
+      "MM Brandvista — Digital Marketing Services & Creative Studio",
+    template: "%s | MM Brandvista",
   },
   description: siteDescription,
   keywords: [
@@ -53,22 +53,22 @@ export const metadata: Metadata = {
     "personal branding",
     "business development",
     "data visualization",
-    "MM Digital Marketing",
+    "MM Brandvista",
   ],
-  authors: [{ name: "MM Digital Marketing" }],
-  creator: "MM Digital Marketing",
+  authors: [{ name: "MM Brandvista" }],
+  creator: "MM Brandvista",
   openGraph: {
     type: "website",
     locale: "en_US",
     ...(siteUrl ? { url: siteUrl } : {}),
-    siteName: "MM Digital Marketing",
-    title: "MM Digital Marketing — Digital Marketing Services & Creative Studio",
+    siteName: "MM Brandvista",
+    title: "MM Brandvista — Digital Marketing Services & Creative Studio",
     description:
       "A founder-led digital marketing agency offering content creation, social media management, graphic design, video production, Meta Ads, Google Ads, website development, SaaS, and AI business solutions.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MM Digital Marketing",
+    title: "MM Brandvista",
     description:
       "A founder-led digital marketing agency offering content creation, social media management, graphic design, video production, Meta Ads, Google Ads, website development, SaaS, and AI business solutions.",
   },

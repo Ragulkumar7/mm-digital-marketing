@@ -66,7 +66,7 @@ export default function Navbar() {
           href="#home"
           onClick={closeMobile}
           className="group shrink-0 transition-transform hover:scale-[1.03]"
-          aria-label="MM Digital Marketing home"
+          aria-label="MM Brandvista home"
         >
           <Logo />
         </a>
