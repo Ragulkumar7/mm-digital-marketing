@@ -29,23 +29,30 @@ const dmMono = DM_Mono({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const siteDescription =
-  "MM Digital Marketing is a founder-led digital studio building thoughtful websites, branding, SEO, and marketing with a small, hands-on team.";
+  "MM Digital Marketing is a founder-led digital marketing agency offering content creation, social media management, graphic design, video production, Meta Ads, Google Ads, website development, SaaS solutions, and AI business solutions with a small, hands-on team.";
 
 export const metadata: Metadata = {
   ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: {
-    default: "MM Digital Marketing — Digital Design, Development & Marketing",
+    default:
+      "MM Digital Marketing — Digital Marketing Services & Creative Studio",
     template: "%s | MM Digital Marketing",
   },
   description: siteDescription,
   keywords: [
-    "design agency",
-    "web development",
-    "UI UX design",
-    "branding",
-    "digital marketing",
-    "SEO",
+    "digital marketing services",
     "social media management",
+    "content creation",
+    "graphic design",
+    "video production",
+    "Meta Ads management",
+    "Google Ads management",
+    "website development",
+    "SaaS solutions",
+    "AI business solutions",
+    "personal branding",
+    "business development",
+    "data visualization",
     "MM Digital Marketing",
   ],
   authors: [{ name: "MM Digital Marketing" }],
@@ -55,15 +62,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     ...(siteUrl ? { url: siteUrl } : {}),
     siteName: "MM Digital Marketing",
-    title: "MM Digital Marketing — Digital Design, Development & Marketing",
+    title: "MM Digital Marketing — Digital Marketing Services & Creative Studio",
     description:
-      "A founder-led digital studio building websites, branding, SEO, and marketing with a hands-on team.",
+      "A founder-led digital marketing agency offering content creation, social media management, graphic design, video production, Meta Ads, Google Ads, website development, SaaS, and AI business solutions.",
   },
   twitter: {
     card: "summary_large_image",
     title: "MM Digital Marketing",
     description:
-      "A founder-led digital studio building websites, branding, SEO, and marketing with a hands-on team.",
+      "A founder-led digital marketing agency offering content creation, social media management, graphic design, video production, Meta Ads, Google Ads, website development, SaaS, and AI business solutions.",
   },
   robots: {
     index: true,

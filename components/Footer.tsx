@@ -26,10 +26,14 @@ const FOOTER_LINKS: { title: string; links: { label: string; href: string }[] }[
     {
       title: "Services",
       links: [
-        { label: "UI/UX Design", href: "#services" },
-        { label: "Web Development", href: "#services" },
-        { label: "Branding", href: "#services" },
-        { label: "Digital Marketing", href: "#services" },
+        { label: "Content Creation", href: "#services" },
+        { label: "Social Media Management", href: "#services" },
+        { label: "Graphic Designing", href: "#services" },
+        { label: "Video Editing", href: "#services" },
+        { label: "Meta Ads Management", href: "#services" },
+        { label: "Google Ads Management", href: "#services" },
+        { label: "Website Development", href: "#services" },
+        { label: "SaaS Solutions", href: "#services" },
       ],
     },
     {

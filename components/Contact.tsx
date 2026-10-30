@@ -69,13 +69,18 @@ const SOCIAL_ICONS: Record<SocialKey, typeof Facebook> = {
 };
 
 const SERVICE_OPTIONS = [
-  "UI/UX Design",
-  "Web Development",
-  "Branding",
-  "Digital Marketing",
-  "SEO",
+  "Content Creation",
   "Social Media Management",
-  "Meta Ads",
+  "Graphic Designing",
+  "Video Editing",
+  "Cinematography",
+  "Meta Ads Management",
+  "Website Development",
+  "Google Ads Management",
+  "SaaS Solutions",
+  "Personal Branding",
+  "B2B, B2C & D2C Business Development",
+  "Artificial Intelligence Agency",
   "Other",
 ];
 

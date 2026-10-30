@@ -7,6 +7,7 @@ import {
   Megaphone,
   Palette,
   Search,
+  ChartColumn,
   type LucideIcon,
 } from "lucide-react";
 
@@ -31,6 +32,9 @@ const FOUNDER: TeamMember = {
     "Social media page management",
     "Meta Ads campaign management",
     "Digital marketing coordination",
+    "Data Collection",
+    "Data Visualization",
+    "Coordination of data-related activities",
   ],
 };
 
@@ -85,6 +89,19 @@ const TEAM: TeamMember[] = [
       "Administrative coordination",
       "Marketing operations",
       "Team coordination",
+    ],
+  },
+  {
+    name: "Harish Kumar",
+    role: "Data Collection & Data Visualization",
+    initials: "HK",
+    icon: ChartColumn,
+    summary:
+      "Collects, organizes, and presents data — turning collected information into clear visual insights for the team and clients.",
+    responsibilities: [
+      "Data Collection",
+      "Data Visualization",
+      "Data Analysis and presentation of collected information",
     ],
   },
 ];
@@ -218,7 +235,7 @@ export default function Team() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="mt-6 grid sm:grid-cols-2 xl:grid-cols-4 gap-6"
+          className="mt-6 grid sm:grid-cols-2 xl:grid-cols-3 gap-6"
         >
           {TEAM.map((member) => (
             <motion.article

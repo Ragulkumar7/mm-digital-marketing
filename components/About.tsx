@@ -149,7 +149,7 @@ export default function About() {
               className="glass-card gradient-border p-6 md:p-8"
             >
               <div className="font-display font-bold text-4xl md:text-5xl text-gradient">
-                5
+                6
               </div>
               <p className="mt-2 text-sm md:text-base text-secondary">
                 Team members
@@ -164,7 +164,7 @@ export default function About() {
               className="glass-card gradient-border p-6 md:p-8"
             >
               <div className="font-display font-bold text-4xl md:text-5xl text-gradient">
-                4
+                12
               </div>
               <p className="mt-2 text-sm md:text-base text-secondary">
                 Core services
